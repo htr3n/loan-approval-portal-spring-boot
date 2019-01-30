@@ -1,0 +1,20 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        #show_sql: true
+        use_sql_comments: false
+        #format_sql: true
+logging:
+  level:
+    org:
+      hibernate:
+        #        SQL: debug
+        type:
+          descriptor:
+#            sql: trace

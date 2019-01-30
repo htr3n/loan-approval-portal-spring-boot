@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="2.1"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+               jaxb:extensionBindingPrefixes="xjc annox"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <jaxb:globalBindings>
+    <xjc:javaType name="java.lang.Float" xmlType="xsd:float" adapter="com.westbank.adapter.xml.FloatAdapter"/>
+    <xjc:javaType name="java.lang.Double" xmlType="xsd:double" adapter="com.westbank.adapter.xml.DoubleAdapter"/>
+    <xjc:javaType name="java.lang.Integer" xmlType="xsd:int" adapter="com.westbank.adapter.xml.IntegerAdapter"/>
+    <xjc:javaType name="java.lang.Long" xmlType="xsd:long" adapter="com.westbank.adapter.xml.LongAdapter"/>
+    <xjc:javaType name="java.time.LocalDate" xmlType="xsd:date" adapter="com.westbank.adapter.xml.LocalDateAdapter"/>
+  </jaxb:globalBindings>
+</jaxb:bindings>

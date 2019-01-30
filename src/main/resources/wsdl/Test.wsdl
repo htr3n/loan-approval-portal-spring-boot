@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Test"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:tns="urn:com:westbank:ws:Test:2019:01"
+                  targetNamespace="urn:com:westbank:ws:Test:2019:01">
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:com:westbank:ws:Test:2019:01"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns="urn:com:westbank:ws:Test:2019:01"
+                elementFormDefault="qualified">
+
+      <xsd:element name="TestRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="dob" type="xsd:date" nillable="true"/>
+            <xsd:element name="anInt" type="xsd:int"/>
+            <xsd:element name="aLong" type="xsd:long"/>
+            <xsd:element name="aDouble" type="xsd:double"/>
+            <xsd:element name="aBoolean" type="xsd:boolean" default="false"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="TestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="status" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+    </xsd:schema>
+  </wsdl:types>
+
+
+  <wsdl:message name="TestRequest">
+    <wsdl:part element="tns:TestRequest" name="request"/>
+  </wsdl:message>
+  <wsdl:message name="TestResponse">
+    <wsdl:part element="tns:TestResponse" name="response"/>
+  </wsdl:message>
+
+  <wsdl:portType name="Test">
+    <wsdl:operation name="go">
+      <wsdl:input message="tns:TestRequest"/>
+      <wsdl:output message="tns:TestResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="TestSOAP" type="tns:Test">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="go">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="Test">
+    <wsdl:port binding="tns:TestSOAP" name="Test">
+      <soap:address location="http://localhost:9999/services/Test"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

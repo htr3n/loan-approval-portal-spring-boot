@@ -1,0 +1,89 @@
+# ----------------------------------------
+# https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ----------------------------------------
+spring:
+  application:
+    name: Loan Approval Portal
+  output:
+    ansi:
+      enabled: "always"
+  main:
+    banner-mode: "off"
+
+  # Database
+  h2:
+    console:
+      enabled: true
+  console:
+    settings:
+      web-allow-others: true
+  # data source
+  datasource:
+    url: jdbc:h2:mem:westbank;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    platform: org.hibernate.dialect.H2Dialect
+    initialization-mode: always
+    username: sa
+    password:
+  # JPA
+  jpa:
+    # https://stackoverflow.com/a/37526397/339302
+    open-in-view: false
+    # Hibernate 5 physical naming strategy fully qualified name
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    # SQL
+    #    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+  #        type: trace
+  #
+  # Spring Web MVC
+  #
+  mvc:
+    view:
+      prefix: "/WEB-INF/jsp/"
+      suffix: ".jsp"
+
+  # auto-configures
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+
+server:
+  port: 9999
+
+#
+# Logging
+#com.zaxxer.hikari.pool.HikariPool
+logging:
+  level:
+    #root: WARN
+    com:
+      westbank: trace
+    org:
+      hibernate:
+        .: info
+      #        SQL: debug
+      type:
+        descriptor:
+      #          sql: trace
+      springframework: info
+
+# Actuator Endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+com:
+  westbank:
+    endpoint:
+      base: http://localhost:${server.port}/services
+      process: http://localhost:8080/ode/processes/LoanApproval
+      # process: http://localhost:9876/ode/processes/LoanApproval
+
+#debug: true
+#trace: true
