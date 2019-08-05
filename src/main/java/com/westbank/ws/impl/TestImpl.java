@@ -26,11 +26,11 @@ public class TestImpl implements Test {
     CustomerRepository customerRepository;
 
     public TestResponse go(TestRequest request) {
-        LOG.info("Executing operation go: {}", JaxbUtil.toXml(request));
+        LOG.debug("Executing operation go: {}", JaxbUtil.toXml(request));
         try {
             final TestResponse response = new TestResponse();
             response.setStatus("1994582911");
-            LOG.info("Response {}", JaxbUtil.toXml(response));
+            LOG.debug("Response {}", JaxbUtil.toXml(response));
             return response;
         } catch (Exception ex) {
             LOG.error("Error when handling go()" + ex.getMessage(), ex);

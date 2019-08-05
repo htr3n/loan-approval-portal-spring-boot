@@ -104,7 +104,7 @@ public class LoanApprovalProcessProxy {
     }
 
     public boolean informCustomerDecision(Long customerId, String customerName, String loanFileId, Long contractId, boolean accepted) {
-        LOG.info("Customer signed contract #'{}'", contractId);
+        LOG.debug("Customer signed contract #'{}'", contractId);
         final CustomerDecision request = createCustomerSignature(customerId, customerName, loanFileId, contractId);
         Assert.notNull(request, "Customer decision request must not be null");
         request.setAccepted(accepted);
@@ -120,7 +120,7 @@ public class LoanApprovalProcessProxy {
     }
 
     public boolean signedContractByManager(String staffId, String staffName, String loanFileId, Long contractId) {
-        LOG.info("Manager signed contract #'" + contractId + "'");
+        LOG.debug("Manager signed contract #'" + contractId + "'");
         final ManagerSignature request = createManagerSignature(staffId, staffName, loanFileId, contractId);
         Assert.notNull(request, "The manager signature request must not be null");
 

@@ -113,7 +113,7 @@ public class CustomerPortalController {
                 final String loanFileId = form.getLoanFileId();
                 final Long contractId = form.getContractId();
                 Optional<LoanContract> contract = loanContractRepository.findById(contractId);
-                LOG.info("Send customer's decision to the process");
+                LOG.debug("Send customer's decision to the process");
                 boolean isOK = processProxy.informCustomerDecision(customer.getId(),
                         customer.getFirstName() + " " + customer.getLastName(), loanFileId, contractId,
                         isAccepted);
@@ -124,7 +124,7 @@ public class CustomerPortalController {
                     // update contract status if the customer accepted, ...
                     if (isAccepted) {
                         if (contract.isPresent()) {
-                            LOG.info("Update the contract status to {} ", LoanFileStatus.ACCEPTED.name());
+                            LOG.debug("Update the contract status to {} ", LoanFileStatus.ACCEPTED.name());
                             contract.get().setSignedByCustomer(actionTime);
                             final LoanFile loanFile = contract.get().getLoanFile();
                             if (loanFile != null) {

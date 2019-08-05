@@ -41,7 +41,7 @@ public class LoanContractService {
         final LoanContract loanContract = createContractFromRequest(request);
         final LoanFile loanFile = loanContract.getLoanFile();
 
-        LOG.info("Created and saved a new loan contract");
+        LOG.debug("Created and saved a new loan contract");
         LOG.debug("Loan contract {}", loanContract);
         LOG.debug("Loan file {}", loanFile);
         final LoanContract savedContract = loanContractRepository.save(loanContract);

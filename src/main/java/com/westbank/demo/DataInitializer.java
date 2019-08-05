@@ -35,7 +35,7 @@ public class DataInitializer {
         if (dataScript != null) {
             // https://github.com/spring-projects/spring-boot/issues/8899
             if (event.getApplicationContext().getParent() == null) {
-                LOG.info("Initialising some application data.");
+                LOG.debug("Initialising some application data.");
                 ScriptUtils.executeSqlScript(DataSourceUtils.getConnection(dataSource), dataScript);
             }
         }
