@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d6880524-de99-4450-bb41-fb121a9f2cf9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/westbank/demo/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/westbank/demo/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/westbank/service/LoanContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/westbank/service/LoanContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/westbank/web/controller/CustomerPortalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/westbank/web/controller/CustomerPortalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/westbank/web/controller/CustomerProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/westbank/web/controller/CustomerProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/westbank/ws/LoanApprovalProcessProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/westbank/ws/LoanApprovalProcessProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/westbank/ws/impl/TestImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/westbank/ws/impl/TestImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/westbank/web/controller/CustomerProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="112">
+              <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -220,18 +214,19 @@
       <workItem from="1564994581352" duration="592000" />
       <workItem from="1564995439845" duration="109000" />
       <workItem from="1564995698196" duration="1352000" />
-      <workItem from="1564999177606" duration="1391000" />
+      <workItem from="1564999177606" duration="1587000" />
+      <workItem from="1565001801234" duration="85000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3890000" />
+    <option name="totallyTimeSpent" value="4171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23962805" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24320458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -430,8 +425,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/westbank/web/controller/CustomerProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        <state relative-caret-position="112">
+          <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
         </state>
       </provider>
     </entry>
