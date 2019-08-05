@@ -57,7 +57,7 @@ public class CustomerProfileController {
         if (!guard.isAuthenticated(session))
             return guard.redirect(session);
 
-        LOG.info("Return the view '{}'", PROFILE_VIEW);
+        LOG.debug("Return the view '{}'", PROFILE_VIEW);
         session.setAttribute(CustomerSession.NAV_INDEX, CustomerSession.NAV_PROFILE);
         session.removeAttribute(CustomerSession.PROCESS_STATUS);
         session.removeAttribute(CustomerSession.PROCESS_STATUS_KEY);
@@ -89,7 +89,7 @@ public class CustomerProfileController {
         validator.validate(form, result);
 
         if (!result.hasFieldErrors()) {
-            LOG.info("Input data valid. Start updating customer profile");
+            LOG.debug("Input data valid. Start updating customer profile");
             final Customer customer = customerService.updateProfile((Long) sessionId, form);
             if (customer != null) {
                 updatedOK = true;
@@ -113,8 +113,8 @@ public class CustomerProfileController {
     private LoanForm loadCustomerProfile(Object sessionId) {
         final LoanForm form = new LoanForm();
         try {
-            Long customerId = (Long) sessionId;
-            customerRepository.findById(customerId).ifPresent(customer -> {
+            Customer customer = (Customer) sessionId;
+            if (customer != null) {
                 form.setBorrowerTitle(customer.getTitle());
                 form.setBorrowerFirstName(customer.getFirstName());
                 form.setBorrowerLastName(customer.getLastName());
@@ -137,7 +137,7 @@ public class CustomerProfileController {
                     form.setBorrowerZipcode(address.getZipcode());
                     form.setBorrowerState(address.getState());
                 }
-            });
+            }
         } catch (NumberFormatException ignored) { // casting sessionId
             LOG.error("Unable to cast session ID {} to customer ID", sessionId);
         }
